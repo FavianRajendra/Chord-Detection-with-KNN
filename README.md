@@ -1,91 +1,72 @@
-🎸 Signal to Song: KNN Musical Chord Recognition
+Markdown
 
-This repository contains a Jupyter Notebook (Chord Detections.ipynb) demonstrating a complete machine learning pipeline for classifying simple musical chords from synthetic time-series data.
+# 🎶 Signal to Song: KNN Musical Chord Recognition
 
-The project uses Signal Processing techniques (like filtering and FFT) to extract meaningful features from raw sound waves and employs a K-Nearest Neighbors (KNN) classifier to perform the final chord recognition.
+This repository contains a machine learning project that demonstrates a full pipeline for classifying common musical chords from synthetic audio signals.
 
-🌟 Project Overview
+The project combines **signal processing** techniques (filtering, FFT) to extract features and uses the **K-Nearest Neighbors (KNN)** algorithm for classification.
 
-The goal of this project is to model and classify four fundamental musical chords: C Major, G Major, A Major, and E minor (Em). The approach is entirely data-driven, simulating the audio signal generation, extracting key features, and training a classification model.
+## 🌟 Project Highlights
 
-Key Steps in the Pipeline:
+* **Custom Data Generation:** Generates synthetic time-series data for four common chords (C, G, A, Em) by simulating their harmonic structure.
+* **Feature Engineering Pipeline:** Converts complex raw signal data into a robust feature set using time-domain statistics and **Fast Fourier Transform (FFT)** for frequency analysis.
+* **Classification:** Implements and evaluates a **K-Nearest Neighbors (KNN)** model for chord recognition.
+* **Evaluation:** Visualizes model performance using classification metrics and a **Confusion Matrix**.
 
-Synthetic Data Generation: Creation of controlled time-series data mimicking the combined sine waves (harmonics) that define specific chord frequencies.
+## 🛠️ Technology Stack
 
-Signal Pre-processing: Application of digital filtering to clean the raw time-series signals.
+| Component | Technology | Role |
+| :--- | :--- | :--- |
+| **Language** | Python | Core development language. |
+| **Classification** | **Scikit-learn (KNN)** | Machine learning algorithm for final classification. |
+| **Signal Processing** | **SciPy** (`scipy.signal`, `scipy.fft`) | Used for filtering and frequency domain analysis. |
+| **Data Handling** | NumPy, Pandas | Array and tabular data manipulation. |
+| **Visualization** | Matplotlib, Seaborn | Plotting signals, spectrums, and evaluation metrics. |
 
-Feature Engineering: Extraction of robust features in both the time domain and frequency domain (using FFT) to convert raw signal data into a format suitable for machine learning.
+---
 
-Classification: Training and evaluation of the K-Nearest Neighbors (KNN) algorithm.
+## 📂 Data & Methodology
 
-🛠️ Technology Stack
+### 1. Target Chords
+The model is trained to classify the following four chords:
+* **C Major**
+* **G Major**
+* **A Major**
+* **E minor (Em)**
 
-Component
+### 2. Feature Extraction
+The feature set used for training the KNN model includes, but is not limited to:
+* **Time Domain:** Mean, Standard Deviation, and Variance of the signal.
+* **Frequency Domain:** Dominant frequency components (using FFT).
+* **Signal Statistics:** Signal Entropy.
 
-Technology
+The notebook carefully visualizes the raw signals and their FFT spectrums to ensure features are meaningful representations of the underlying audio data.
 
-Role
+---
 
-Language
+## 🚀 Getting Started
 
-Python
+Follow these steps to set up the project and run the analysis locally.
 
-Core programming language.
+### Prerequisites
 
-Classification
+Ensure you have Python installed. Then, install all necessary libraries using pip:
 
-Scikit-learn (KNN)
-
-Machine learning model used for chord classification.
-
-Signal Processing
-
-SciPy (scipy.signal, scipy.fft)
-
-Used for filtering, Fast Fourier Transform, and entropy calculation.
-
-Data Handling
-
-NumPy, Pandas
-
-Fundamental array and data manipulation.
-
-Visualization
-
-Matplotlib, Seaborn
-
-Used for plotting raw signals, frequency spectrums, and evaluation plots (Pairplot, Confusion Matrix).
-
-📐 Extracted Features
-
-The model relies on a diverse set of engineered features, including:
-
-Time Domain: Mean, Standard Deviation, Variance.
-
-Frequency Domain: Dominant frequency components extracted via FFT.
-
-Statistical/Information Theory: Signal entropy.
-
-🚀 Getting Started
-
-To run this notebook and reproduce the results, you will need a Python environment with the required packages.
-
-Prerequisites
-
+```bash
 pip install numpy pandas scikit-learn matplotlib seaborn scipy jupyter
-
-
 Execution
-
 Clone the repository:
 
-git clone [Your-Repo-URL]
-cd [repository-name]
+Bash
 
+git clone [https://github.com/FavianRajendra/TF-IDF-and-Cosine-Similarity.git](https://github.com/FavianRajendra/TF-IDF-and-Cosine-Similarity.git)
+cd TF-IDF-and-Cosine-Similarity
+Run the Notebook: Open the Jupyter Notebook in your environment.
 
-Start Jupyter Notebook:
+Bash
 
 jupyter notebook "Chord Detections.ipynb"
+Execute all cells in the notebook sequentially to generate the data, extract features, train the model, and view the final classification results.
 
-
-Run all cells sequentially to generate the data, extract features, train the KNN model, and view the performance evaluation.
+📝 Project Summary
+This project showcases an end-to-end data science application in audio analysis. By creating controlled signal data and applying appropriate digital signal processing techniques, we successfully transform raw audio concepts into trainable data for a simple yet effective machine learning model, achieving reliable chord classification.
